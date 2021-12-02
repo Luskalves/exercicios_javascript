@@ -4,11 +4,12 @@ let array = ['java', 'javascript', 'python', 'html', 'css'];
 
 let maiorArray;
 let menorArray;
+let arrayAtual;
+let arrayFuturo;
+let arrayPassado;
 
 for(let index = 0; index < array.length; index++){
-    let arrayAtual;
-    let arrayFuturo;
-    let arrayPassado;
+    
     
     if (array[index-1] === undefined){
         arrayAtual = array[index].length;
@@ -18,6 +19,7 @@ for(let index = 0; index < array.length; index++){
     else if(array[index+1] === undefined){
         arrayAtual = array[index].length;
         arrayPassado =  array[index-1].length;
+        arrayFuturo = array[index-2].length;
 
     }else{
         arrayAtual = array[index].length;
@@ -27,9 +29,14 @@ for(let index = 0; index < array.length; index++){
     
     if(arrayAtual > arrayFuturo && arrayAtual > arrayPassado){
         maiorArray = array[index];
-    }   
+    }  
+    if(arrayAtual < arrayFuturo && arrayAtual < arrayPassado){
+        menorArray = array[index];
+    }  
         
 }
 
 console.log(maiorArray);
+console.log(menorArray);
+
 
